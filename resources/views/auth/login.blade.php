@@ -1,4 +1,4 @@
-@extends('guests.layouts.base')
+@extends('layouts.base')
 
 @section('contents')
 

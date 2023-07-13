@@ -1,7 +1,7 @@
-@extends('admin.layouts.base')
+@extends('layouts.base')
 
 @section('contents')
 
-    Benvenuto!
+    @include('admin.includes.nav')
 
 @endsection

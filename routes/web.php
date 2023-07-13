@@ -23,8 +23,11 @@ Route::middleware(['auth', 'verified'])
     ->name('admin.')
     ->prefix('admin')
     ->group(function () {
-        Route::get('/', [AdminPageController::class, 'dashboard'])->name('dashboard');
-        Route::resource('project', ProjectController::class);
+        Route::get('/',                                 [AdminPageController::class, 'dashboard'])->name('dashboard');
+        Route::get('/projects/trashed',                 [ProjectController::class, 'trashed'])->name('projects.trashed');
+        Route::post('/projects/{project}/restore',      [ProjectController::class, 'restore'])->name('projects.restore');
+        Route::delete('/projects/{project}/hardDelete', [ProjectController::class, 'harddelete'])->name('projects.hardDelete');
+        Route::resource('projects', ProjectController::class);
 });
 
 Route::middleware('auth')

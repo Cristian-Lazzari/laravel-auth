@@ -18,11 +18,12 @@ return new class extends Migration
             $table->id();
 
             $table->string('name', 100)->unique();;
+            $table->string('link');
+            $table->string('link_github');
+            $table->string('url_image')->nullable();
+            $table->string('url_gif')->nullable();
             $table->text('description');
-            $table->url('link');
-            $table->url('link_github');
-            $table->url('url_image')->nullable();
-            $table->url('url_gifs')->nullable();
+            $table->softDeletes();
    
 
             $table->timestamps();
